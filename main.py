@@ -39,7 +39,7 @@ client = Groq(api_key=os.getenv("GROQ_API_KEY"))
 try:
     db_client = chromadb.PersistentClient(path="./hits_vectordb")
     default_ef = embedding_functions.DefaultEmbeddingFunction()
-    collection = db_client.get_collection(name="hits_knowledge", embedding_function=default_ef)
+    collection = db_client.get_collection(name="hits_web_data", embedding_function=default_ef)
 except Exception as e:
     print(f"DB Error: {e}")
 
